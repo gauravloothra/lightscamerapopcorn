@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/static/style1.css" type="text/css">
+{% block body %}
+
+ 
+ 
+<form action="/signup" method="POST">
+	<div class="signup">
+		<div class="signup-screen">
+			<div class="app-title">
+				<h1>Sign-up</h1>
+			</div>
+ 
+			<div class="signup-form">
+				<div class="control-group">
+				<input type="text" class="signup-field" value="" placeholder="username" name="username">
+				<label class="signup-field-icon fui-user" for="signup-name"></label>
+				</div>
+ 
+				<div class="control-group">
+				<input type="password" class="signup-field" value="" placeholder="password" name="password">
+				<label class="signup-field-icon fui-lock" for="signup-pass"></label>
+				</div>
+
+				<div class="control-group">
+					<input type="text" class="signup-field" value"" placeholder="email" name="email">
+					<label class="signup-field-icon fui-user" for="signup-name"></label>
+				</div>
+ 
+                <input type="submit" value="Sign-Up" class="btn btn-primary btn-large btn-block" >
+			    <br>
+			</div>
+		</div>
+	</div>
+</form>
+ 
+
+{% endblock %}
