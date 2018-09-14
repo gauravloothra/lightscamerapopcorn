@@ -9,17 +9,18 @@ engine = create_engine('sqlite:///login.db', echo=True)
 
 
 
-app = Flask(__name__)
+app = Flask(__name__ , static_url_path='/static')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///login.db'
 db = SQLAlchemy(app)
 
 @app.route('/')
 def home():
     if not session.get('logged_in'):
-        return render_template('login.html')
+        return render_template('login2.html')
     else:
-        return "Hello Boss!  <a href='/logout'>Logout</a>"
- 
+        return render_template('home.html')
+        #"Hello Boss!  <a href='/logout'>Logout</a>"
+
 @app.route('/login', methods=['POST'])
 def do_admin_login():
  
@@ -34,7 +35,7 @@ def do_admin_login():
         session['logged_in'] = True
     else:
         flash('wrong password!')
-        return render_template('signup.html')
+        return render_template('signup2.html')
     return home()
  
 @app.route("/logout")
@@ -49,8 +50,18 @@ def signup():
         new_user = User(username=request.form['username'], password=request.form['password'])
         db.session.add(new_user)
         db.session.commit()
-        return render_template('login.html')
-    return render_template('signup.html')
+        return render_template('login2.html')
+    return render_template('signup2.html')
+
+@app.route("/bookseats" , methods=['GET','POST'])
+def bookseats():
+    if request.method == 'POST':
+        city = request.form['cities']
+        theatre = request.form['theatres_list']
+        movie = request.form['movies_list']
+        show = request.form['shows']
+        return render_template('bookseats.html', city=city,theatre=theatre,movie=movie,show=show)
+
 
 
 if __name__ == "__main__":
