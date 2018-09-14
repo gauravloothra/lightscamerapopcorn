@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Lights Camera Popcorn</title>
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->  
+  <link rel="icon" type="image/png" href="static/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="static/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="static/vendor/animate/animate.css">
+<!--===============================================================================================-->  
+  <link rel="stylesheet" type="text/css" href="static/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="static/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+  <link rel="stylesheet" type="text/css" href="static/css/util.css">
+  <link rel="stylesheet" type="text/css" href="static/css/home_style.css">
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+<!--===============================================================================================-->
+</head>
+<body>
+  
+  <div class="limiter">
+    <div class="container-login100">
+      
+      <div class="wrap-login100">
+      <a href='/logout'>Logout</a>
+        <div class="container-fluid" style="width:1400px;height:100%;border:solid white 1px; margin-top:5%;background-color:white;border-radius:25px; background-repeat:no-repeat>
+        <div style="width:1200px;height:500px;border-radius:25px;">
+          <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <img src="static/images/1.png" alt="the nun">
+            </div>
+
+            <div class="item">
+              <img src="static/images/2.png" alt="stree">
+            </div>
+
+            <div class="item">
+              <img src="static/images/3.png" alt="avengers">
+            </div>
+            <div class="item">
+              <img src="static/images/4.png" alt="manmarziyan">
+            </div>
+        </div>
+
+      <!-- Left and right controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <span class="sr-only">Next</span>
+        </a>
+        </div>
+      </div>
+      <br>
+      <br>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <form action="/bookseats" method = POST onsubmit="">
+        <div class ="cities">
+          <p> Select a City </p><br>
+          <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+            <input type="radio" name="cities" id="New Delhi" value="Delhi" class="input-hidden" />
+              <label for="New Delhi">
+              <img class="img-responsive" src="static/images/Delhi.png" />
+              </label>
+          </div>
+          <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+            <input type="radio" name="cities" id="Mumbai" value="Mumbai" class="input-hidden" />
+            <label for="Mumbai">
+            <img class="img-responsive" src="static/images/Mumbai.png" />
+            </label>
+          </div>
+          <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+            <input type="radio" name="cities" id="Bangalore" value="Bangalore" class="input-hidden" />
+            <label for="Bangalore">
+            <img class="img-responsive" src="static/images/Bangalore.png" />
+            </label>
+          </div>
+          <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
+            <input type="radio" name="cities" id="Hyderabad" value="Hyderabad" class="input-hidden" />
+            <label for="Hyderabad">
+            <img class="img-responsive" src="static/images/Hyderabad.png" />
+            </label>
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div>
+        <p>Select a Theatre</p><br>
+        <select id="theatres_list" name ="theatres_list">
+          <option value ="Cinepolis">Cinepolis Cinemas</option>
+          <option value ="Wave">Wave Cinemas</option>
+          <option value ="PVR ECX">PVR ECX Cinemas</option>
+          <option value ="DT">DT Cinemas</option>
+        </select>
+        </div>
+        <br>
+        <br>
+        <div>
+        <p>Select a Movie</p><br>
+        <select id="movies_list" name="movies_list">
+          <option value ="Nun">The Nun</option>
+          <option value ="Stree">Stree</option>
+          <option value ="Avengers">Avengers: Infinity War</option>
+          <option value ="Manmarziyan">Manmarziyan</option>
+        </select>
+        </div>
+        <br>
+        <br>
+        <p>Select a Show-time</p><br>
+        <div>
+          <input type="radio" name="shows" id="show1" value="show1"> 10:00 a.m. - 1:00 p.m. </input>
+          <input type="radio" name="shows" id="show2" value="show2"> 2:00 p.m - 5:00 p.m. </input>
+          <input type="radio" name="shows" id="show3" value="show3"> 6:00 p.m. - 9:00 p.m. </input>
+        </div><br><br>
+        <button type="submit" class="btn btn-default" >Book Seats</button>  
+          
+
+        </form>
+    </div>
+
+    </div>
+    
+  </div>
+
+  
+
+  
+<!--===============================================================================================-->  
+  <script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+  <script src="static/vendor/bootstrap/js/popper.js"></script>
+  <script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+  <script src="static/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+  <script src="static/vendor/tilt/tilt.jquery.min.js"></script>
+  <script >
+    $('.js-tilt').tilt({
+      scale: 1.1
+    })
+  </script>
+<!--===============================================================================================-->
+  <script src="static/js/main.js"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+</body>
+</html>
