@@ -9,23 +9,23 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/landing_reset.css') }}"> <!-- CSS reset -->
 	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/landing_style.css') }}"> <!-- Gem style -->
 	<script type="text/javascript" src="{{ url_for('static', filename = 'js/landing_modernizr.js') }}"></script> <!-- Modernizr -->
-  	
+
     <title>Lights Camera Popcorn!</title>
 
 </head>
 <body style=" background-image: url('static/images/cover.png'); background-repeat: no-repeat; background-position: center; background-attachment: fixed; background-size: 110% 130%; font-family: 'Raleway';font-size: 22px;" >
 	<header role="banner"  style="background-color:rgba(0,0,0,0.6)">
-        <div id="cd-logo"><a href="#0"><img src="{{ url_for('static', filename = 'images/logo.png') }}" alt="Logo" width="60px" height="60px" style="border-radius:50% "></a>
-        <div style="margin-top:-40px; margin-left:80px;">
+        <div id="cd-logo"><a href="#"><img src="{{ url_for('static', filename = 'images/logo.png') }}" alt="Logo" width="60px" height="60px" style="border-radius:50%;margin-top: -10px;margin-left: -50px"></a>
+        <div style="margin-top:-40px; margin-left:20px">
            <font size="5.5" color="white" ><b>Lights Camera Popcorn</b></font>
-        </div>     
+        </div>
         </div>
 
 		<nav class="main-nav">
 			<ul>
 				<!-- inser more links here -->
-				<li><a class="cd-signin" href="/home">Sign in</a></li>
-				<li><a class="cd-signup" href="/signup">Sign up</a></li>
+				<li><a class="cd-signin" href="/home" style="font-size:16px;text-align:center">Login</a></li>
+				<li><a class="cd-signup" href="/signup" style="font-size:16px;text-align:center">Sign-up</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -61,7 +61,7 @@
 						<input class="full-width" type="submit" value="Login">
 					</p>
 				</form>
-				
+
 				<p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
 				<!-- <a href="#0" class="cd-close-form">Close</a> -->
 			</div> <!-- cd-login -->
@@ -120,11 +120,11 @@
 			<a href="#0" class="cd-close-form">Close</a>
 		</div> <!-- cd-user-modal-container -->
     </div> <!-- cd-user-modal -->
-    
+
     <div style="text-align:center; margin-top:90px; cursor:pointer" >
 
         <font size="100"  color="white">
-        
+
         <b>Redefining</b>
         <br><br>
         <b>Online Movie Ticket Booking </b>

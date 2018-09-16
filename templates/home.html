@@ -5,6 +5,8 @@
     
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="static/css/util.css">
+  <link rel="stylesheet" type="text/css" href="static/css/home_style.css">
 <!--===============================================================================================-->  
   <link rel="icon" type="image/png" href="static/images/icons/favicon.ico"/>
 <!--===============================================================================================-->
@@ -18,137 +20,150 @@
 <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="static/vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-  <link rel="stylesheet" type="text/css" href="static/css/util.css">
-  <link rel="stylesheet" type="text/css" href="static/css/home_style.css">
+  
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
+  <script src="static/js/bootstrap.js"></script>
 <!--===============================================================================================-->
 </head>
 <body>
   
-  <div class="limiter">
-    <div class="container-login100">
-      
-      <div class="wrap-login100">
-      <a href='/logout'>Logout</a>
-        <div class="container-fluid" style="width:1400px;height:100%;border:solid white 1px; margin-top:5%;background-color:white;border-radius:25px; background-repeat:no-repeat>
-        <div style="width:1200px;height:500px;border-radius:25px;">
-          <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-          </ol>
 
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-            <div class="item active">
-              <img src="static/images/1.png" alt="the nun">
-            </div>
+<div class="main-background">
 
-            <div class="item">
-              <img src="static/images/2.png" alt="stree">
-            </div>
+  <div class="white-box">
 
-            <div class="item">
-              <img src="static/images/3.png" alt="avengers">
-            </div>
-            <div class="item">
-              <img src="static/images/4.png" alt="manmarziyan">
-            </div>
+    <div class="navbar-lcp">
+
+      <img src="static/images/icons/Logo1.png" alt="IMG" width=10% height=10%>
+
+      <div class="nav-menu">
+        <a href="/home">Home</a>
+        
+      </div>
+
+      <div class="user-info">
+        Hi! {{ user_name }}
+        <div class="dropdown-content">
+        
+        <a href="/logout">Logout</a>
         </div>
 
-      <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-          <span class="glyphicon glyphicon-chevron-left"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-          <span class="glyphicon glyphicon-chevron-right"></span>
-          <span class="sr-only">Next</span>
-        </a>
+      </div>
+
+    </div>
+
+    <div class="navbar-bot-border">
+    </div>
+    <br>
+    <p id="now-showing-text"> Now Showing </p>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="static/images/1.png"
+                 alt="First slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="static/images/2.png"
+                 alt="Second slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="static/images/3.png"
+                 alt="Third slide">
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="static/images/4.png"
+                 alt="Fourth slide">
         </div>
       </div>
-      <br>
-      <br>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-        <form action="/bookseats" method = POST onsubmit="">
-        <div class ="cities">
-          <p> Select a City </p><br>
-          <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
-            <input type="radio" name="cities" id="New Delhi" value="Delhi" class="input-hidden" />
-              <label for="New Delhi">
-              <img class="img-responsive" src="static/images/Delhi.png" />
-              </label>
-          </div>
-          <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
-            <input type="radio" name="cities" id="Mumbai" value="Mumbai" class="input-hidden" />
-            <label for="Mumbai">
+
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+      </a>
+
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+      </a>
+
+    </div>
+
+    
+
+    <p id="book-ticket-text">Book Tickets</p>
+
+    <form action="/bookseats" method = POST onsubmit="">
+
+      <p id="city-selection-title">Select City</p>
+      <div class ="city-image">
+        <input type="radio" name="cities" id="New Delhi" value="Delhi" class="input-hidden" />
+          <label for="New Delhi">
+            <img class="img-responsive" src="static/images/Delhi.png" />
+          </label>
+
+        <input type="radio" name="cities" id="Mumbai" value="Mumbai" class="input-hidden" />
+          <label for="Mumbai">
             <img class="img-responsive" src="static/images/Mumbai.png" />
-            </label>
-          </div>
-          <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
-            <input type="radio" name="cities" id="Bangalore" value="Bangalore" class="input-hidden" />
-            <label for="Bangalore">
+          </label>
+        
+        <input type="radio" name="cities" id="Bangalore" value="Bangalore" class="input-hidden" />
+          <label for="Bangalore">
             <img class="img-responsive" src="static/images/Bangalore.png" />
-            </label>
-          </div>
-          <div class="col-xs-4 col-sm-3 col-md-2 nopad text-center">
-            <input type="radio" name="cities" id="Hyderabad" value="Hyderabad" class="input-hidden" />
-            <label for="Hyderabad">
+          </label>
+        
+        <input type="radio" name="cities" id="Hyderabad" value="Hyderabad" class="input-hidden" />
+          <label for="Hyderabad">
             <img class="img-responsive" src="static/images/Hyderabad.png" />
-            </label>
-          </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div>
-        <p>Select a Theatre</p><br>
-        <select id="theatres_list" name ="theatres_list">
+          </label>
+      </div>
+
+      <p id="theatre-selection-text">Select Theatre</p>
+      <div class="theatre-list">
+        <select id="theatres_list" name ="theatres_list" required>
+          <option selected disabled> Choose a theatre from the list</option>
           <option value ="Cinepolis">Cinepolis Cinemas</option>
           <option value ="Wave">Wave Cinemas</option>
           <option value ="PVR ECX">PVR ECX Cinemas</option>
           <option value ="DT">DT Cinemas</option>
         </select>
-        </div>
-        <br>
-        <br>
-        <div>
-        <p>Select a Movie</p><br>
-        <select id="movies_list" name="movies_list">
+      </div>
+    
+    
+      <p id="movie-selection-text">Select Movie</p>
+      <div class="movie-list">
+        <select id="movies_list" name="movies_list" required>
+          <option selected disabled> Choose a movie from the list</option>
           <option value ="The Nun">The Nun</option>
           <option value ="Stree">Stree</option>
           <option value ="Avengers: Infinity War">Avengers: Infinity War</option>
           <option value ="Manmarziyan">Manmarziyan</option>
         </select>
-        </div>
-        <br>
-        <br>
-        <p>Select a Show-time</p><br>
-        <div>
-          <input type="radio" name="shows" id="show1" value="10:00 a.m. - 1:00 p.m. "> 10:00 a.m. - 1:00 p.m. </input>
-          <input type="radio" name="shows" id="show2" value="2:00 p.m - 5:00 p.m."> 2:00 p.m - 5:00 p.m. </input>
-          <input type="radio" name="shows" id="show3" value="6:00 p.m. - 9:00 p.m."> 6:00 p.m. - 9:00 p.m. </input>
-        </div><br><br>
-        <button type="submit" class="btn btn-default" >Book Seats</button>  
-          
+      </div>
 
-        </form>
-    </div>
-
-    </div>
-    
+      <p id="show-timing-text">Select a Show-time</p><br>
+      <div class="show-time-list">
+        <input class ="show-time-list" type="radio" name="shows" id="show1" value="10:00 a.m. - 1:00 p.m. " required/>
+                <label for="show1">10:00 a.m. - 1:00 p.m.</label>
+                <input type="radio" name="shows" id="show2" value="2:00 p.m - 5:00 p.m."/>
+                <label for="show2">2:00 p.m - 5:00 p.m.</label>
+                <input type="radio" name="shows" id="show3" value="6:00 p.m. - 9:00 p.m."/>
+                <label for="show3">6:00 p.m. - 9:00 p.m. </label>
+      </div>
+      <button type="submit" class="btn btn-default" style="border-radius: 30px">Book Seats</button>  
+    </form>
   </div>
-
+</div>
   
-
   
 <!--===============================================================================================-->  
   <script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -165,7 +180,7 @@
     })
   </script>
 <!--===============================================================================================-->
-  <script src="static/js/main.js"></script>
+<script src="static/js/main.js"></script>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
 <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
 </body>
