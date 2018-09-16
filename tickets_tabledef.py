@@ -14,33 +14,22 @@ class Ticket(Base):
  	
     ticket_id = Column(Integer,primary_key=True)
     username = Column(String)
-    city_id = Column(Integer,ForeignKey=True)
     city_name = Column(String)
-    theatre_id = Column(Integer,ForeignKey=True)
     theatre_name = Column(String)
-    movie_id = Column(Integer,ForeignKey=True)
     movie_name = Column(String)
-    show_id = Column(Integer,ForeignKey=True)
     show_time = Column(String)
-    seats = Column(String)
-
-    
-    
+        
  
     #----------------------------------------------------------------------
-    def __init__(self, ticket_id, username, city_id, city_name, theatre_id, theatre_name, movie_id, movie_name, show_id, show_time, seats):
-        """"""
+    def __init__(self, ticket_id, username, city_name, theatre_name, movie_name,  show_time):
+
         self.ticket_id = ticket_id
         self.username = username
-        self.city_id = city_id
         self.city_name = city_name
-        self.theatre_id = theatre_id
         self.theatre_name = theatre_name
-        self.movie_id = movie_id
         self.movie_name = movie_name
-        self.show_id = show_id
         self.show_time = show_time
-        self.seats = seats
+        
 
  
 # create tables

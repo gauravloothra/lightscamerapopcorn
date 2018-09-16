@@ -5,7 +5,9 @@ from flask_mail import Mail, Message
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from tabledef import *
+from tickets_tabledef import *
 from flask_sqlalchemy import SQLAlchemy
+import uuid
 
 
 
@@ -18,7 +20,9 @@ app = Flask(__name__ , static_url_path='/static')
 
 #Configure the database to take login data already given
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///login.db'
-db = SQLAlchemy(app)
+db = SQLAlchemy(app) 
+
+global POST_USERNAME
 
 #Create an instance of mail from the Mail class available in flask_mail
 #pass the application object as an argument
@@ -50,7 +54,9 @@ def home():
     if not session.get('logged_in'):
         return render_template('login2.html')
     else:
-        return render_template('home.html')
+        sep = '@'
+        user_name=POST_USERNAME.split(sep,1)[0]
+        return render_template('home.html',user_name=user_name)
         #"Hello Boss!  <a href='/logout'>Logout</a>"
 
 @app.route('/login', methods=['POST'])
@@ -58,6 +64,7 @@ def do_login():
     ''' 
     For login of already registered users
     '''
+    global POST_USERNAME 
     POST_USERNAME = str(request.form['username'])
     POST_PASSWORD = str(request.form['password'])
  
@@ -79,7 +86,7 @@ def logout():
     Logging out from your account
     '''
     session['logged_in'] = False
-    return home()
+    return landing()
 
 @app.route("/signup", methods=['GET','POST'])
 def signup():
@@ -119,7 +126,29 @@ def bookseats():
         show = request.form['shows']
         return render_template('bookseats2.html', city=city,theatre=theatre,movie=movie,show=show)
 
+@app.route("/ticketconfirm", methods=['GET','POST'])
+def ticketconfirm():
+    ticket_id = str(uuid.uuid4())
+    email = POST_USERNAME
+    if request.method == 'POST':
+        city = request.form['cities']
+        theatre = request.form['theatres_list']
+        movie = request.form['movies_list']
+        show = request.form['shows']
+        new_ticket = Ticket(ticket_id=ticket_id, username=email, city_name=city, theatre_name=theatre, movie_name=movie,  show_time=show)
+        db.session.add(new_ticket)
+        db.session.commit()
+        msg = Message("Ticket_Confirmation", sender='lightscamerapopcorn.nec@gmail.com',\
+                       recipients=[email])
+        msg.body = ''' Thank you for using lights camera popcorn to book your tickets!
+                       
+                       
+                       Please show your unique ticket ID  %s at the counter and enjoy that fantastic movie with popcorns!''' % (ticket_id)
+    
+        mail.send(msg)
+        return '''Your ticket is booked and a confirmation is sent to you via email on your registered email address!
 
+                Thank You for using Lights Camera Popcorn! Arigatou Gosaimasu! :) <a href='/logout'>Logout</a>''' 
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
