@@ -9,7 +9,10 @@ Base = declarative_base()
  
 ########################################################################
 class User(Base):
-    """"""
+    """
+    Define the user table to store the
+    logging information
+    """
     __tablename__ = "users"
  
     id = Column(Integer, primary_key=True)
@@ -24,5 +27,5 @@ class User(Base):
         self.password = password
 
  
-# create tables
+# creates the table from the schema provided
 Base.metadata.create_all(engine)
