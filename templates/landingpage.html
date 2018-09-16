@@ -1,146 +1,56 @@
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/png" href="static/images/icons/favicon.ico"/>
-	<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+	<title>Lights Camera Popcorn</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/landing_reset.css') }}"> <!-- CSS reset -->
-	<link rel="stylesheet" href="{{ url_for('static', filename = 'css/landing_style.css') }}"> <!-- Gem style -->
-	<script type="text/javascript" src="{{ url_for('static', filename = 'js/landing_modernizr.js') }}"></script> <!-- Modernizr -->
-  	
-    <title>Lights Camera Popcorn!</title>
-
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/app.css') }}"> 
 </head>
-<body style=" background-image: url('static/images/cover.png'); background-repeat: no-repeat; background-position: center; background-attachment: fixed; background-size: 110% 130%; font-family: 'Raleway';font-size: 22px;" >
-	<header role="banner"  style="background-color:rgba(0,0,0,0.6)">
-        <div id="cd-logo"><a href="#0"><img src="{{ url_for('static', filename = 'images/logo.png') }}" alt="Logo" width="60px" height="60px" style="border-radius:50% "></a>
-        <div style="margin-top:-40px; margin-left:80px;">
-           <font size="5.5" color="white" ><b>Lights Camera Popcorn</b></font>
-        </div>     
-        </div>
+<body>
 
-		<nav class="main-nav">
-			<ul>
-				<!-- inser more links here -->
-				<li><a class="cd-signin" href="/home">Sign in</a></li>
-				<li><a class="cd-signup" href="/signup">Sign up</a></li>
-			</ul>
-		</nav>
-	</header>
-
-	<div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
-		<div class="cd-user-modal-container"> <!-- this is the container wrapper -->
-			<ul class="cd-switcher">
-				<li><a href="/home">Sign in</a></li>
-				<li><a href="/signup">New account</a></li>
-			</ul>
-
-			<div id="cd-login"> <!-- log in form -->
-				<form class="cd-form">
-					<p class="fieldset" >
-						<label class="image-replace cd-email" for="signin-email">E-mail</label>
-						<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
-						<span class="cd-error-message">Error message here!</span>
-					</p>
-
-					<p class="fieldset">
-						<label class="image-replace cd-password" for="signin-password">Password</label>
-						<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Password">
-						<a href="#0" class="hide-password">Hide</a>
-						<span class="cd-error-message">Error message here!</span>
-					</p>
-
-					<p class="fieldset">
-						<input type="checkbox" id="remember-me" checked>
-						<label for="remember-me">Remember me</label>
-					</p>
-
-					<p class="fieldset">
-						<input class="full-width" type="submit" value="Login">
-					</p>
-				</form>
-				
-				<p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
-				<!-- <a href="#0" class="cd-close-form">Close</a> -->
-			</div> <!-- cd-login -->
-
-			<div id="cd-signup"> <!-- sign up form -->
-				<form class="cd-form">
-					<p class="fieldset">
-						<label class="image-replace cd-username" for="signup-username">Username</label>
-						<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
-						<span class="cd-error-message">Error message here!</span>
-					</p>
-
-					<p class="fieldset">
-						<label class="image-replace cd-email" for="signup-email">E-mail</label>
-						<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
-						<span class="cd-error-message">Error message here!</span>
-					</p>
-
-					<p class="fieldset">
-						<label class="image-replace cd-password" for="signup-password">Password</label>
-						<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Password">
-						<a href="#0" class="hide-password">Hide</a>
-						<span class="cd-error-message">Error message here!</span>
-					</p>
-
-					<p class="fieldset">
-						<input type="checkbox" id="accept-terms">
-						<label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
-					</p>
-
-					<p class="fieldset">
-						<input class="full-width has-padding" type="submit" value="Create account">
-					</p>
-				</form>
-
-				<!-- <a href="#0" class="cd-close-form">Close</a> -->
-			</div> <!-- cd-signup -->
-
-			<div id="cd-reset-password"> <!-- reset password form -->
-				<p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
-
-				<form class="cd-form">
-					<p class="fieldset">
-						<label class="image-replace cd-email" for="reset-email">E-mail</label>
-						<input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
-						<span class="cd-error-message">Error message here!</span>
-					</p>
-
-					<p class="fieldset">
-						<input class="full-width has-padding" type="submit" value="Reset password">
-					</p>
-				</form>
-
-				<p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
-			</div> <!-- cd-reset-password -->
-			<a href="#0" class="cd-close-form">Close</a>
-		</div> <!-- cd-user-modal-container -->
-    </div> <!-- cd-user-modal -->
-    
-    <div style="text-align:center; margin-top:90px; cursor:pointer" >
-
-        <font size="100"  color="white">
-        
-        <b>Redefining</b>
-        <br><br>
-        <b>Online Movie Ticket Booking </b>
-
-        </font>
-
-
-
-
+ <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-left" href="#"> <img src="{{ url_for('static', filename = 'images/logo.png') }}" alt="Logo" width="45px" height="45px"></a>
+      <a class="navbar-brand" href="#">Lights Camera Popcorn</a>
     </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/signup">Signup  <i class="fa fa-user-plus"></i></a></li>
+        <li><a href="/home">Login  <i class="fa fa-user"></i></a></li>
+      </ul>
+    </div>
+  </div>
+ </nav>
+
+ <div class="container">
+ 	<div class="row">
+ 		<div class="col-lg-12">
+ 			<div class="content">
+ 				<h1>LIGHTS CAMERA POPCORN</h1>
+ 				<h3>Redifining Online Movie Booking</h3>
+ 				<hr>
+ 			</div>
+ 		</div>
+ 	</div>
+ </div>
+
+ <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.js"></script>
+ <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
 
-
-
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="{{ url_for('static', filename = 'main.js') }}"></script> <!-- Gem jQuery -->
 </body>
 </html>
