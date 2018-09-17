@@ -15,13 +15,15 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     username = Column(String)
     password = Column(String)
+    phno = Column(String)
     
  
     #----------------------------------------------------------------------
-    def __init__(self, username, password):
+    def __init__(self, username, password, phno):
         """"""
         self.username = username
         self.password = password
+        self.phno = phno
 
  
 # create tables

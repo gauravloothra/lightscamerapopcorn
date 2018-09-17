@@ -47,7 +47,7 @@ mail = Mail(app)
 
 @app.route('/')
 def landing():
-    return render_template('landingpage.html')
+    return render_template('landingpage2.html')
 
 @app.route('/home')
 def home():
@@ -98,7 +98,8 @@ def signup():
     if request.method == 'POST':
         uname = request.form['username']
         passwd = request.form['password']
-        new_user = User(username=uname, password=passwd)
+        phno = request.form['phno']
+        new_user = User(username=uname, password=passwd, phno=phno)
         db.session.add(new_user)
         db.session.commit()
         msg = Message("LightsCameraPopcorn", sender='lightscamerapopcorn.nec@gmail.com',\
@@ -146,9 +147,10 @@ def ticketconfirm():
                        Please show your unique ticket ID  %s at the counter and enjoy that fantastic movie with popcorns!''' % (ticket_id)
     
         mail.send(msg)
-        return '''Your ticket is booked and a confirmation is sent to you via email on your registered email address!
+        flash('''Your ticket is booked and a confirmation is sent to you via email on your registered email address!
 
-                Thank You for using Lights Camera Popcorn! Arigatou Gosaimasu! :) <a href='/logout'>Logout</a>''' 
+                Thank You for using Lights Camera Popcorn! Arigatou Gosaimasu! :) ''')
+        return render_template('home.html',user_name=POST_USERNAME)
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
