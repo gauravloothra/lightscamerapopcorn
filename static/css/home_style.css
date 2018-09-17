@@ -80,8 +80,19 @@
     border-radius: 50%;
 }
 .nav-menu{
+    /*text-align: center;*/
     margin: auto;
+    position: relative;
+    left:3%;
+}
 
+span {
+    text-align: center;
+}
+.home-button:hover{
+    
+    text-decoration:none;
+    
 }
 .nav-menu a{
     font-family: Raleway;
