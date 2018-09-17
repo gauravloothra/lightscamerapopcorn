@@ -42,7 +42,13 @@ Config(app)
 mail = Mail(app)
 
 
-
+@app.errorhandler(400)
+def handle_error(error):
+    '''
+    Exception handling and user feedback
+    '''
+    flash("Bad request!! Please select all options befor proceedings")
+    return render_template('home.html', username=POST_USERNAME)
 
 
 @app.route('/')
@@ -129,6 +135,9 @@ def bookseats():
 
 @app.route("/ticketconfirm", methods=['GET','POST'])
 def ticketconfirm():
+    '''
+    A confirmation of ticket booked is sent to the user via email with a unique id
+    '''
     ticket_id = str(uuid.uuid4())
     email = POST_USERNAME
     if request.method == 'POST':
