@@ -16,7 +16,7 @@ pip install flask_sqlalchemy
 ```
 3. cd in the repo
 ```
-cd lightscamrapocorn
+cd lightscamerapocorn
 ```
 4. Run applicaiton
 ```
